@@ -166,4 +166,109 @@ having count(employeeid)>5;
 
 
 
+-- Stage 4: Basic Inner  Join 
+
+/*
+20. Join customers and orders using customerid.
+
+Display:
+
+customerid
+firstname
+lastname
+orderid
+*/
+
+select 
+c.customerid,
+c.firstname,
+c.lastname,
+o.orderid
+from sales.customers as c 
+inner  join sales.orders  as o 
+on c.customerid=o.customerid;
+
+
+/* 
+21. Join products and orders using productid.
+
+Display:
+
+productid
+product name
+orderid
+sales
+*/
+
+select 
+p.productid,
+p.product as product_name,
+o.orderid,
+o.sales
+from sales.products as p 
+inner join sales.orders as o 
+on o.productid=p.productid; 
+
+/*
+22. Join employees and orders using salespersonid.
+
+Display:
+
+employeeid
+employee name
+orderid
+orderdate
+*/
+
+
+select 
+e.employeeid,
+e.firstname,
+o.orderid,
+o.orderdate
+from sales.employees as e 
+inner join sales.orders as o 
+on e.employeeid = o.salespersonid;
+
+/*
+23. Join customers and orders.
+
+Show only customers who have placed orders.
+
+Columns:
+
+customer name
+country
+order status
+*/
+
+select 
+c.firstname,
+c.country,
+o.orderstatus 
+from sales.customers as c 
+inner join sales.orders as o 
+on o.customerid=c.customerid ; 
+
+
+/*
+24. Join products and orders.
+
+Show only products that appear in orders.
+
+Columns:
+
+product name
+category
+sales
+*/
+
+select 
+p.product as product_name , 
+p.category, 
+o.sales
+from sales.products as p 
+inner join  sales.orders as o 
+on p.productid=o.productid;
+
 
