@@ -65,7 +65,21 @@ where country in ('USA','Germany') and
 	score between 300 and 800 
 order by score desc;
 
+/*
+4.Using sales.orders, find the total sales for each customer.
 
+Return:
+
+customerid
+number_of_orders
+total_sales
+
+Requirements:
+
+Include all customers, even customers who have placed no orders.
+Sort by total_sales from highest to lowest.
+Use the sales.customers table as the starting point.
+*/
 
 select
 	c.customerid, 
