@@ -128,7 +128,9 @@ Round the percentage to 2 decimal places.
 Sort by delivered_percentage DESC.
 
 */
-
+-- Exploring Data Table 
+select * from sales.orders;
+-- Main logic
 select
 c.customerid, 
 c.firstname,
@@ -146,4 +148,3 @@ group by c.customerid,
 		c.firstname
 order by delivered_percentage desc;
 
-select * from sales.orders;
